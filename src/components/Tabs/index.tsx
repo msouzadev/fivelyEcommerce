@@ -15,9 +15,7 @@ interface Props {
 // import { Container } from './styles';
 
 export default function Tabs(props: Props) {
-  useEffect(() => {
-    console.log(props);
-  }, []);
+  useEffect(() => {}, []);
   const { renderIcon, activeTintColor, inactiveTintColor } = props;
   const { routes, index: activeRouteIndex } = props.navigation.state;
   return (
