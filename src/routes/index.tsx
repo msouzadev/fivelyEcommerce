@@ -13,7 +13,18 @@ import {
   MaterialIcons,
   Feather
 } from "@expo/vector-icons";
+import { createStackNavigator } from "react-navigation-stack";
 
+import Product from "../screens/Product";
+import Header from "../components/Header";
+const Stacks = createStackNavigator({
+  Product: {
+    screen: Product,
+    navigationOptions: {
+      header: props => <Header {...props} />
+    }
+  }
+});
 const AppTabs = createBottomTabNavigator(
   {
     Home: {
@@ -83,4 +94,15 @@ const AppTabs = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(AppTabs);
+const AppRouter = createStackNavigator(
+  {
+    AppTabs,
+    Stacks
+  },
+  {
+    defaultNavigationOptions: {
+      header: null
+    }
+  }
+);
+export default createAppContainer(AppRouter);

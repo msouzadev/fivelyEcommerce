@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 // import { Container } from './styles';
 
-export default function Header() {
+export default function Header(props) {
   return (
     <View
       style={{
@@ -22,7 +22,9 @@ export default function Header() {
           }}
         >
           <Ionicons name="ios-arrow-back" color="#F7F7F7" size={30} />
-          <Text style={{ color: "#F6F6F6", fontSize: 18 }}>Categories</Text>
+          <Text style={{ color: "#F6F6F6", fontSize: 18 }}>
+            {props.title || "Categories"}
+          </Text>
 
           <Ionicons name="ios-search" color="#F7F7F7" size={30} />
         </View>

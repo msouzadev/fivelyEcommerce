@@ -20,8 +20,6 @@ import Modal from "../Modal";
 // import { Container } from './styles';
 
 export default function FilterModal(props) {
-  console.log(props);
-
   return (
     <View>
       <Modal open={props.open} onClose={props.onClose} transparent={false}>

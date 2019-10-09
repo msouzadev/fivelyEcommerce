@@ -7,7 +7,6 @@ import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 import Header from "../components/Header";
 import CatalogHeader from "../components/CatalogHeader";
 import Catalog from "../screens/Catalog";
-import Product from "../screens/Product";
 
 const TopTab = createMaterialTopTabNavigator(
   {
@@ -50,8 +49,7 @@ const Stack = createStackNavigator(
       navigationOptions: {
         header: props => <CatalogHeader props={props} />
       }
-    },
-    Product: Product
+    }
   },
   {
     initialRouteName: "Catalog"

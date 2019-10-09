@@ -19,7 +19,7 @@ import {
 } from "@expo/vector-icons";
 // import { Container } from './styles';
 
-export default function Catalog() {
+export default function Catalog(props) {
   const [sortModal, setSortModal] = useState(false);
   const [filterModal, setFilterModal] = useState(false);
   return (
@@ -150,6 +150,7 @@ export default function Catalog() {
         renderItem={({ item }) => (
           <View>
             <TouchableOpacity
+              onPress={() => props.navigation.navigate("Product")}
               style={{
                 marginBottom: 26,
                 flexDirection: "row",
@@ -216,7 +217,7 @@ export default function Catalog() {
                 bottom: 10,
                 right: 0,
                 position: "absolute",
-                backgroundColor: "#1E1F28",
+                backgroundColor: "#2A2C36",
                 borderRadius: 40 / 2,
                 width: 40,
                 height: 40
