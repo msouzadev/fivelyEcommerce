@@ -10,7 +10,10 @@ interface NavigationParams {
 type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
 
 interface Props {
+  renderIcon: any;
   navigation: Navigation;
+  activeTintColor: any;
+  inactiveTintColor: any;
 }
 // import { Container } from './styles';
 
