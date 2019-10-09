@@ -23,47 +23,64 @@ export default function Tabs(props: Props) {
   return (
     <View
       style={{
-        backgroundColor: "#1E1F28",
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10
+        backgroundColor: "#1E1F28"
       }}
     >
       <View
         style={{
-          flexDirection: "row",
-          paddingTop: 8,
-          paddingHorizontal: 27,
-          paddingBottom: 30,
-          alignItems: "center",
-          justifyContent: "space-between"
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 2
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+
+          elevation: 10,
+          backgroundColor: "#1E1F28",
+          borderTopLeftRadius: 15,
+          borderTopRightRadius: 15
         }}
       >
-        {routes.map((route, routeIndex) => {
-          const tintColor =
-            routeIndex == activeRouteIndex
-              ? activeTintColor
-              : inactiveTintColor;
-          return (
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate(route.routeName)}
-              key={route.key}
-              style={{ justifyContent: "center", alignItems: "center" }}
-            >
-              {renderIcon({
-                route,
-                focused: routeIndex == activeRouteIndex,
-                tintColor
-              })}
-              <Text
-                style={{
-                  color: routeIndex == activeRouteIndex ? "#EF3651" : "#ABB4BD"
-                }}
+        <View
+          style={{
+            flexDirection: "row",
+            paddingTop: 8,
+            paddingHorizontal: 27,
+            paddingBottom: 30,
+            alignItems: "center",
+            justifyContent: "space-between"
+          }}
+        >
+          {routes.map((route, routeIndex) => {
+            const tintColor =
+              routeIndex == activeRouteIndex
+                ? activeTintColor
+                : inactiveTintColor;
+            return (
+              <TouchableOpacity
+                onPress={() => props.navigation.navigate(route.routeName)}
+                key={route.key}
+                style={{ justifyContent: "center", alignItems: "center" }}
               >
-                {route.routeName}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
+                {renderIcon({
+                  route,
+                  focused: routeIndex == activeRouteIndex,
+                  tintColor
+                })}
+                <Text
+                  style={{
+                    textAlign: "center",
+                    color:
+                      routeIndex == activeRouteIndex ? "#EF3651" : "#ABB4BD"
+                  }}
+                >
+                  {route.routeName}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
       </View>
     </View>
   );
