@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createAppContainer } from "react-navigation";
 import Home from "../screens/Home";
 import Tabs from "../components/Tabs";
-// import Shop from "../screens/Shop";
+import CatalogHeader from "../components/CatalogHeader";
 import Shop from "./shop";
 import Bag from "../screens/Bag";
 import Favorites from "../screens/Favorites";
@@ -85,7 +85,7 @@ const AppTabs = createBottomTabNavigator(
     }
   },
   {
-    initialRouteName: "Shop",
+    initialRouteName: "Bag",
     tabBarComponent: Tabs,
     tabBarOptions: {
       activeTintColor: "#EF3651",

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, TouchableOpacity, FlatList, Image } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 // import { Container } from './styles';
 
 export default function CatalogHeader(props) {
+  useEffect(() => {
+    console.log(props);
+  }, []);
   return (
     <View
       style={{
@@ -28,7 +31,7 @@ export default function CatalogHeader(props) {
 
         <View style={{ marginTop: 18, marginLeft: 14 }}>
           <Text style={{ fontSize: 34, color: "#F7F7F7", fontWeight: "bold" }}>
-            Women's tops
+            {props.title || "Women's tops"}
           </Text>
         </View>
       </View>
