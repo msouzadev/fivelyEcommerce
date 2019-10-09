@@ -15,7 +15,7 @@ export default function CatalogHeader(props) {
         <View
           style={{
             flexDirection: "row",
-            marginHorizontal: 8,
+            marginHorizontal: 16,
             justifyContent: "space-between",
             alignItems: "center"
           }}

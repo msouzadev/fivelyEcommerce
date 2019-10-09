@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 // import { Container } from './styles';
 
@@ -16,12 +16,14 @@ export default function Header(props) {
         <View
           style={{
             flexDirection: "row",
-            marginHorizontal: 8,
+            marginHorizontal: 16,
             justifyContent: "space-between",
             alignItems: "center"
           }}
         >
-          <Ionicons name="ios-arrow-back" color="#F7F7F7" size={30} />
+          <TouchableOpacity onPress={() => props.navigation.goBack()}>
+            <Ionicons name="ios-arrow-back" color="#F7F7F7" size={30} />
+          </TouchableOpacity>
           <Text style={{ color: "#F6F6F6", fontSize: 18 }}>
             {props.title || "Categories"}
           </Text>

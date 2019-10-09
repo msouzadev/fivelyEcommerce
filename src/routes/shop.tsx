@@ -52,7 +52,7 @@ const Stack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "Catalog"
+    // initialRouteName: "Catalog"
   }
 );
 export default createAppContainer(Stack);

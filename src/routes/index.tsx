@@ -100,6 +100,7 @@ const AppRouter = createStackNavigator(
     Stacks
   },
   {
+    // initialRouteName: "Stacks",
     defaultNavigationOptions: {
       header: null
     }
