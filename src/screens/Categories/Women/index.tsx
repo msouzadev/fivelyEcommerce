@@ -8,7 +8,8 @@ export default function Women(props) {
   return (
     <ScrollView
       style={{
-        backgroundColor: "#1E1F28"
+        backgroundColor: "#1E1F28",
+        marginBottom: "21.3%"
       }}
     >
       <View

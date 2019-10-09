@@ -21,7 +21,9 @@ export default function Tabs(props: Props) {
   return (
     <View
       style={{
-        backgroundColor: "#1E1F28"
+        bottom: 0,
+        position: "absolute",
+        width: "100%"
       }}
     >
       <View
@@ -29,12 +31,13 @@ export default function Tabs(props: Props) {
           shadowColor: "#000",
           shadowOffset: {
             width: 0,
-            height: 2
+            height: 12
           },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
+          shadowOpacity: 0.58,
+          shadowRadius: 16.0,
 
-          elevation: 10,
+          borderColor: "#1E1F28",
+          elevation: 24,
           backgroundColor: "#1E1F28",
           borderTopLeftRadius: 15,
           borderTopRightRadius: 15

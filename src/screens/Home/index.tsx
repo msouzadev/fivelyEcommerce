@@ -13,7 +13,13 @@ import {
 const bannerHome = require("../../../assets/img/banner-home.png");
 export default function Home() {
   return (
-    <View style={{ flex: 1, backgroundColor: "#1E1F28" }}>
+    <ScrollView
+      style={{
+        flex: 1,
+        backgroundColor: "#1E1F28",
+        marginBottom: "21.3%"
+      }}
+    >
       <ImageBackground
         source={bannerHome}
         style={{ width: "100%", height: 520, marginTop: 30 }}
@@ -86,6 +92,6 @@ export default function Home() {
           />
         </View>
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 }

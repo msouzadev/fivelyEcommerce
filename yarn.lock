@@ -855,6 +855,11 @@
     pouchdb-collections "^1.0.1"
     tiny-queue "^0.2.1"
 
+"@ptomasroos/react-native-multi-slider@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ptomasroos/react-native-multi-slider/-/react-native-multi-slider-1.0.0.tgz#a4ea27b1320b93a1db9f696c24789695df6c9f30"
+  integrity sha512-NpX22rQLArg9widwMzGf7XsInTDf6mfY/D1XaDVjglNkVphj3NSN37+nF6MofArCxC++1P+jHv0SGWbmJQwy4g==
+
 "@react-native-community/cli@^1.2.1":
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-1.11.2.tgz#b14967f24a389f5a16889a747345cf0e5757a2f1"
@@ -4590,6 +4595,11 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
+
+rn-range-slider@^1.2.9:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/rn-range-slider/-/rn-range-slider-1.2.9.tgz#02f91d013e5c0a9aa8d5de57a3efe465d2997b14"
+  integrity sha512-pxusNwuIxWCrcs3hJDm3K/9J0xCtM9N1cmggrRgGP2yZaoaMfeetTj+BZbZvhZdsRYi6uHr/Tqh3KXuSJcqG/w==
 
 rsvp@^3.3.3:
   version "3.6.2"

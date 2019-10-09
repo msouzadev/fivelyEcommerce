@@ -1,24 +1,91 @@
-import React from "react";
-import { View, FlatList, Image, TouchableOpacity, Text } from "react-native";
-
+import React, { useState } from "react";
+import FilterModal from "../../components/FilterModal";
+import MultiSlider from "@ptomasroos/react-native-multi-slider";
+import {
+  View,
+  FlatList,
+  Image,
+  TouchableOpacity,
+  Text,
+  TouchableWithoutFeedback,
+  ScrollView
+} from "react-native";
+import Modal from "../../components/Modal";
 import {
   MaterialCommunityIcons,
   MaterialIcons,
-  FontAwesome
+  FontAwesome,
+  Ionicons
 } from "@expo/vector-icons";
 // import { Container } from './styles';
 
 export default function Catalog() {
+  const [sortModal, setSortModal] = useState(false);
+  const [filterModal, setFilterModal] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: "#1E1F28" }}>
+      <Modal
+        style={{ fleX: 1 }}
+        transparent={true}
+        open={sortModal}
+        onClose={() => setSortModal(false)}
+      >
+        <View
+          style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            backgroundColor: "#1E1F28",
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+            elevation: 20
+          }}
+        >
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: 14
+            }}
+          >
+            <View
+              style={{
+                backgroundColor: "#ABB4BD",
+                width: 60,
+                height: 6,
+                borderRadius: 10
+              }}
+            ></View>
+            <Text style={{ color: "#F6F6F6", fontSize: 18, marginTop: 16 }}>
+              Sort by
+            </Text>
+          </View>
+          <View style={{ marginTop: 33 }}>
+            {[1, 2, 3, 4, 6].map(item => (
+              <View
+                key={item}
+                style={{
+                  marginBottom: 10,
+                  backgroundColor: item == 3 && "#EF3651",
+                  padding: 20
+                }}
+              >
+                <Text style={{ color: "#F7F7F7", fontSize: 16 }}>Popular</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      </Modal>
+      <FilterModal open={filterModal} onClose={() => setFilterModal(false)} />
       <FlatList
-        style={{ marginLeft: 14, marginTop: 12 }}
+        style={{ marginLeft: 14, marginVertical: 12, height: 60 }}
         horizontal
         keyExtractor={item => String(item)}
         data={[1, 2, 3, 4, 6]}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={{
+              height: 40,
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: "#F7F7F7",
@@ -42,7 +109,9 @@ export default function Catalog() {
               alignItems: "center"
             }}
           >
-            <MaterialIcons name="filter-list" color="#F7F7F7" size={30} />
+            <TouchableOpacity onPress={() => setFilterModal(true)}>
+              <MaterialIcons name="filter-list" color="#F7F7F7" size={30} />
+            </TouchableOpacity>
             <Text style={{ color: "#F7F7F7", marginLeft: 7 }}>Filters</Text>
           </View>
           <View
@@ -52,9 +121,12 @@ export default function Catalog() {
               alignItems: "center"
             }}
           >
-            <View style={{ transform: [{ rotate: "90deg" }] }}>
-              <MaterialIcons name="compare-arrows" color="#F7F7F7" size={30} />
-            </View>
+            <TouchableOpacity
+              onPress={() => setSortModal(true)}
+              style={{ transform: [{ rotate: "90deg" }] }}
+            >
+              <MaterialIcons name="compare-arrows" color="#F7F7F7" size={25} />
+            </TouchableOpacity>
             <Text style={{ color: "#F7F7F7", marginLeft: 7 }}>
               Price: lowest to high
             </Text>
@@ -73,7 +145,7 @@ export default function Catalog() {
 
       <FlatList
         keyExtractor={item => String(item)}
-        style={{ marginHorizontal: 16, marginTop: 20 }}
+        style={{ marginHorizontal: 16, marginTop: 20, marginBottom: "21.3%" }}
         data={[1, 2, 3, 4, 5, 6]}
         renderItem={({ item }) => (
           <View>
