@@ -15,7 +15,10 @@ export default function Modal(props) {
       >
         <TouchableWithoutFeedback onPress={props.onClose}>
           <View
-            style={{ opacity: 0.3, backgroundColor: "#000000", ...props.style }}
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.3)",
+              ...props.style
+            }}
           ></View>
         </TouchableWithoutFeedback>
         {props.children}
