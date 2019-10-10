@@ -10,7 +10,7 @@ import {
 import AddCardModal from "../../components/AddCardModal";
 // import { Container } from './styles';
 
-export default function PaymentMethods() {
+export default function PaymentMethods(props) {
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
@@ -22,7 +22,10 @@ export default function PaymentMethods() {
               <Text style={{ color: "#f7f7f7" }}>Your payment cards</Text>
             </View>
             {[1, 2, 3, 4].map(item => (
-              <View key={item}>
+              <TouchableOpacity
+                key={item}
+                onPress={() => props.navigation.goBack()}
+              >
                 <View>
                   <View style={{ borderRadius: 25 }}>
                     <ImageBackground
@@ -45,7 +48,7 @@ export default function PaymentMethods() {
                             marginTop: 30,
                             flexDirection: "row",
                             justifyContent: "space-between",
-                            width: 300
+                            width: "100%"
                           }}
                         >
                           <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
@@ -99,7 +102,7 @@ export default function PaymentMethods() {
                     Use as default payment method
                   </Text>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))}
           </View>
         </View>

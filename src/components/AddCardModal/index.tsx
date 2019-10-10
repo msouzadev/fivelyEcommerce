@@ -18,6 +18,7 @@ export default function AddCardModal(props) {
           position: "absolute",
           bottom: 0,
           width: "100%",
+          maxHeight: "90%",
           backgroundColor: "#1E1F28",
           borderTopLeftRadius: 30,
           borderTopRightRadius: 30,
@@ -44,9 +45,7 @@ export default function AddCardModal(props) {
           </Text>
         </View>
         <View>
-          <ScrollView
-            style={{ marginTop: 33, paddingHorizontal: 16, height: 350 }}
-          >
+          <ScrollView style={{ marginTop: 33, paddingHorizontal: 16 }}>
             <View>
               {/* card name */}
               <View

@@ -10,6 +10,7 @@ import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import PaymentMethods from "../screens/PaymentMethods";
 import SuccessOrder from "../screens/SuccessOrder";
+import MyOrders from "../screens/MyOrders";
 import {
   MaterialCommunityIcons,
   MaterialIcons,
@@ -19,32 +20,55 @@ import { createStackNavigator } from "react-navigation-stack";
 
 import Product from "../screens/Product";
 import Checkout from "../screens/Checkout";
+import CatalogHeader from "../components/CatalogHeader";
+import { View, Text } from "react-native";
 const OrderSuccess = createSwitchNavigator({
   SuccessOrder
 });
 const Stacks = createStackNavigator(
   {
-    Product: {
-      screen: Product,
-      navigationOptions: {
-        header: props => <Header {...props} />
-      }
-    },
     Checkout: {
       screen: Checkout,
       navigationOptions: {
         header: props => <Header {...props} title={"Checkout"} />
       }
     },
+
     PaymentMethods: {
       screen: PaymentMethods,
       navigationOptions: {
         header: props => <Header {...props} title={"Payment methods"} />
       }
+    },
+
+    Product: {
+      screen: Product,
+      navigationOptions: {
+        header: props => <Header {...props} />
+      }
     }
   },
   {
-    initialRouteName: "PaymentMethods"
+    // initialRouteName: "PaymentMethods"
+  }
+);
+const ProfileStack = createStackNavigator(
+  {
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        header: props => <CatalogHeader {...props} title="Profile" />
+      }
+    },
+    MyOrders: {
+      screen: MyOrders,
+      navigationOptions: {
+        header: props => <CatalogHeader {...props} title="My Orders" />
+      }
+    }
+  },
+  {
+    initialRouteName: "MyOrders"
   }
 );
 const AppTabs = createBottomTabNavigator(
@@ -94,7 +118,7 @@ const AppTabs = createBottomTabNavigator(
       }
     },
     Profile: {
-      screen: Profile,
+      screen: ProfileStack,
       navigationOptions: {
         tabBarIcon: ({ tintColor, focused }) => (
           <MaterialIcons
@@ -107,7 +131,7 @@ const AppTabs = createBottomTabNavigator(
     }
   },
   {
-    initialRouteName: "Bag",
+    initialRouteName: "Profile",
     tabBarComponent: Tabs,
     tabBarOptions: {
       activeTintColor: "#EF3651",
@@ -123,7 +147,7 @@ const AppRouter = createStackNavigator(
     OrderSuccess
   },
   {
-    initialRouteName: "OrderSuccess",
+    // initialRouteName: "OrderSuccess",
     defaultNavigationOptions: {
       header: null
     }

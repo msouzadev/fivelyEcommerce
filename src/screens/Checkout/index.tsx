@@ -69,7 +69,9 @@ export default function Checkout(props) {
                 <Text style={{ color: "#F5F5F5" }}>**** **** **** 3947</Text>
               </View>
             </View>
-            <TouchableOpacity onPress={() => props.navigation.navigate("")}>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("PaymentMethods")}
+            >
               <Text style={{ color: "#EF3651" }}>Change</Text>
             </TouchableOpacity>
           </View>

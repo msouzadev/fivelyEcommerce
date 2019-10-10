@@ -3,7 +3,7 @@ import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
 
 // import { Container } from './styles';
 
-export default function SuccessOrder() {
+export default function SuccessOrder(props) {
   return (
     <>
       <ScrollView style={{ flex: 1, backgroundColor: "#1E1F28" }}>
@@ -57,6 +57,7 @@ export default function SuccessOrder() {
         }}
       >
         <TouchableOpacity
+          onPress={() => props.navigation.navigate("Catalog")}
           style={{
             paddingVertical: 14,
             backgroundColor: "#EF3651",
