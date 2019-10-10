@@ -3,11 +3,12 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createAppContainer } from "react-navigation";
 import Home from "../screens/Home";
 import Tabs from "../components/Tabs";
-import CatalogHeader from "../components/CatalogHeader";
+import Header from "../components/Header";
 import Shop from "./shop";
 import Bag from "../screens/Bag";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
+import PaymentMethods from "../screens/PaymentMethods";
 import {
   MaterialCommunityIcons,
   MaterialIcons,
@@ -16,15 +17,32 @@ import {
 import { createStackNavigator } from "react-navigation-stack";
 
 import Product from "../screens/Product";
-import Header from "../components/Header";
-const Stacks = createStackNavigator({
-  Product: {
-    screen: Product,
-    navigationOptions: {
-      header: props => <Header {...props} />
+import Checkout from "../screens/Checkout";
+const Stacks = createStackNavigator(
+  {
+    Product: {
+      screen: Product,
+      navigationOptions: {
+        header: props => <Header {...props} />
+      }
+    },
+    Checkout: {
+      screen: Checkout,
+      navigationOptions: {
+        header: props => <Header {...props} title={"Checkout"} />
+      }
+    },
+    PaymentMethods: {
+      screen: PaymentMethods,
+      navigationOptions: {
+        header: props => <Header {...props} title={"Payment methods"} />
+      }
     }
+  },
+  {
+    initialRouteName: "PaymentMethods"
   }
-});
+);
 const AppTabs = createBottomTabNavigator(
   {
     Home: {
@@ -100,7 +118,7 @@ const AppRouter = createStackNavigator(
     Stacks
   },
   {
-    // initialRouteName: "Stacks",
+    initialRouteName: "Stacks",
     defaultNavigationOptions: {
       header: null
     }
