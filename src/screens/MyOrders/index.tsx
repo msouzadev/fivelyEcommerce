@@ -11,7 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 // import { Container } from './styles';
 
-export default function MyOrders() {
+export default function MyOrders(props) {
   const orderStatus = ["Delivered", "Processing", "Cancelled"];
   return (
     <View
@@ -108,6 +108,7 @@ export default function MyOrders() {
               }}
             >
               <TouchableOpacity
+                onPress={() => props.navigation.navigate("OrderDetails")}
                 style={{
                   paddingVertical: 8,
                   paddingHorizontal: 20,

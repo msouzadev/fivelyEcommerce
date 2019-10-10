@@ -22,6 +22,7 @@ import Product from "../screens/Product";
 import Checkout from "../screens/Checkout";
 import CatalogHeader from "../components/CatalogHeader";
 import { View, Text } from "react-native";
+import OrderDetails from "../screens/OrderDetails";
 const OrderSuccess = createSwitchNavigator({
   SuccessOrder
 });
@@ -65,10 +66,16 @@ const ProfileStack = createStackNavigator(
       navigationOptions: {
         header: props => <CatalogHeader {...props} title="My Orders" />
       }
+    },
+    OrderDetails: {
+      screen: OrderDetails,
+      navigationOptions: {
+        header: props => <Header {...props} title="Order Details" />
+      }
     }
   },
   {
-    initialRouteName: "MyOrders"
+    initialRouteName: "OrderDetails"
   }
 );
 const AppTabs = createBottomTabNavigator(
