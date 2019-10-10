@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "react-navigation-tabs";
-import { createAppContainer } from "react-navigation";
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import Home from "../screens/Home";
 import Tabs from "../components/Tabs";
 import Header from "../components/Header";
@@ -9,6 +9,7 @@ import Bag from "../screens/Bag";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import PaymentMethods from "../screens/PaymentMethods";
+import SuccessOrder from "../screens/SuccessOrder";
 import {
   MaterialCommunityIcons,
   MaterialIcons,
@@ -18,6 +19,9 @@ import { createStackNavigator } from "react-navigation-stack";
 
 import Product from "../screens/Product";
 import Checkout from "../screens/Checkout";
+const OrderSuccess = createSwitchNavigator({
+  SuccessOrder
+});
 const Stacks = createStackNavigator(
   {
     Product: {
@@ -115,10 +119,11 @@ const AppTabs = createBottomTabNavigator(
 const AppRouter = createStackNavigator(
   {
     AppTabs,
-    Stacks
+    Stacks,
+    OrderSuccess
   },
   {
-    initialRouteName: "Stacks",
+    initialRouteName: "OrderSuccess",
     defaultNavigationOptions: {
       header: null
     }

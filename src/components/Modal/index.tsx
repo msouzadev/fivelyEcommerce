@@ -8,7 +8,7 @@ export default function Modal(props) {
   return (
     <View>
       <RNModal
-        animationType="fade"
+        animationType="slide"
         transparent={props.transparent}
         visible={props.open}
         onRequestClose={props.onClose}
@@ -16,7 +16,7 @@ export default function Modal(props) {
         <TouchableWithoutFeedback onPress={props.onClose}>
           <View
             style={{
-              backgroundColor: "rgba(0, 0, 0, 0.3)",
+              backgroundColor: "rgba(0, 0, 0, 0.3);",
               ...props.style
             }}
           ></View>

@@ -17,7 +17,7 @@ export default function Bag(props) {
       <Header {...props} title={"My Bag"} />
       <ScrollView style={{ marginBottom: "27%" }}>
         <Modal
-          style={{ fleX: 1 }}
+          style={{ flex: 1 }}
           transparent={true}
           open={promoCodeModal}
           onClose={() => setPromoCodeModal(false)}
@@ -391,6 +391,7 @@ export default function Bag(props) {
           style={{ marginTop: 25, paddingHorizontal: 16, marginBottom: 20 }}
         >
           <TouchableOpacity
+            onPress={() => props.navigation.navigate("Checkout")}
             style={{
               justifyContent: "center",
               alignItems: "center",

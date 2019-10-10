@@ -69,9 +69,9 @@ export default function Checkout(props) {
                 <Text style={{ color: "#F5F5F5" }}>**** **** **** 3947</Text>
               </View>
             </View>
-            <View>
+            <TouchableOpacity onPress={() => props.navigation.navigate("")}>
               <Text style={{ color: "#EF3651" }}>Change</Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -146,6 +146,7 @@ export default function Checkout(props) {
         </View>
         <View style={{ paddingHorizontal: 16, marginTop: 23 }}>
           <TouchableOpacity
+            onPress={() => props.navigation.navigate("OrderSuccess")}
             style={{
               justifyContent: "center",
               alignItems: "center",

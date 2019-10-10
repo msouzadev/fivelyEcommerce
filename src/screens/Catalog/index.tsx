@@ -25,7 +25,7 @@ export default function Catalog(props) {
   return (
     <View style={{ flex: 1, backgroundColor: "#1E1F28" }}>
       <Modal
-        style={{ fleX: 1 }}
+        style={{ flex: 1 }}
         transparent={true}
         open={sortModal}
         onClose={() => setSortModal(false)}
