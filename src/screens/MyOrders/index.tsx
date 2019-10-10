@@ -12,6 +12,7 @@ import { Ionicons } from "@expo/vector-icons";
 // import { Container } from './styles';
 
 export default function MyOrders() {
+  const orderStatus = ["Delivered", "Processing", "Cancelled"];
   return (
     <View
       style={{ flex: 1, backgroundColor: "#1E1F28", marginBottom: "23.5%" }}
@@ -22,9 +23,33 @@ export default function MyOrders() {
           flexDirection: "row",
           marginTop: 27
         }}
-      ></View>
+      >
+        <FlatList
+          keyExtractor={item => item}
+          horizontal
+          data={orderStatus}
+          renderItem={({ item, index }) => (
+            <TouchableOpacity
+              style={{
+                marginRight: 21,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: index == 0 ? 20 : 0,
+                paddingHorizontal: 12,
+                paddingVertical: 8,
+                backgroundColor: index == 0 && "#F6F6F6"
+              }}
+            >
+              <Text style={{ color: index == 0 ? "#2A2C36" : "#F6F6F6" }}>
+                {item}
+              </Text>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
 
       <FlatList
+        style={{ marginTop: 30 }}
         data={[1, 2, 34, 4, 5, 6]}
         keyExtractor={item => String(item)}
         renderItem={({ item }) => (
