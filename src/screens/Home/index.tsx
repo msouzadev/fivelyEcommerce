@@ -16,8 +16,7 @@ export default function Home() {
     <ScrollView
       style={{
         flex: 1,
-        backgroundColor: "#1E1F28",
-        marginBottom: "21.3%"
+        backgroundColor: "#1E1F28"
       }}
     >
       <ImageBackground
@@ -30,6 +29,7 @@ export default function Home() {
           </Text>
           <TouchableOpacity
             style={{
+              marginTop: 18,
               backgroundColor: "#EF3651",
               justifyContent: "center",
               alignItems: "center",
@@ -73,7 +73,7 @@ export default function Home() {
             </View>
           </View>
           <FlatList
-            style={{ marginTop: 22, paddingBottom: 20 }}
+            style={{ marginTop: 22, paddingBottom: 20, marginBottom: "23.5%" }}
             horizontal
             data={[1, 2, 3, 4, 5]}
             keyExtractor={item => String(item)}

@@ -21,14 +21,23 @@ export default function Header(props) {
             alignItems: "center"
           }}
         >
-          <TouchableOpacity onPress={() => props.navigation.goBack()}>
+          <TouchableOpacity onPress={() => props.navigation.pop()}>
             <Ionicons name="ios-arrow-back" color="#F7F7F7" size={30} />
           </TouchableOpacity>
-          <Text style={{ color: "#F6F6F6", fontSize: 18 }}>
+          <Text
+            style={{
+              color: "#F6F6F6",
+              fontSize: 18,
+              textAlign: "center",
+              flex: 8
+            }}
+          >
             {props.title || "Categories"}
           </Text>
 
-          <Ionicons name="ios-search" color="#F7F7F7" size={30} />
+          {props.showRigthIcon && (
+            <Ionicons name="ios-search" color="#F7F7F7" size={30} />
+          )}
         </View>
       </View>
     </View>

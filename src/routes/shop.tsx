@@ -41,13 +41,13 @@ const Stack = createStackNavigator(
     Categories: {
       screen: TopTab,
       navigationOptions: {
-        header: props => <Header />
+        header: props => <Header {...props} />
       }
     },
     Catalog: {
       screen: Catalog,
       navigationOptions: {
-        header: props => <CatalogHeader props={props} />
+        header: props => <CatalogHeader {...props} />
       }
     }
   },

@@ -9,7 +9,7 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 // import { Container } from './styles';
 
-export default function Product() {
+export default function Product(props) {
   const [openSelect, setOpen] = useState(false);
   return (
     <ScrollView style={{ backgroundColor: "#1E1F28" }}>
@@ -236,6 +236,7 @@ export default function Product() {
           }}
         >
           <TouchableOpacity
+            onPress={() => props.navigation.navigate("Bag")}
             style={{
               backgroundColor: "#EF3651",
               borderRadius: 15,

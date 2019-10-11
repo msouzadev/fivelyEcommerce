@@ -61,16 +61,22 @@ export default function Catalog(props) {
             </Text>
           </View>
           <View style={{ marginTop: 33 }}>
-            {[1, 2, 3, 4, 6].map(item => (
+            {[
+              "Popular",
+              "Newest",
+              "Customer review",
+              "Price:lowest to high",
+              "Price:highest to low"
+            ].map((item, index) => (
               <View
                 key={item}
                 style={{
                   marginBottom: 10,
-                  backgroundColor: item == 3 && "#EF3651",
+                  backgroundColor: index == 3 && "#EF3651",
                   padding: 20
                 }}
               >
-                <Text style={{ color: "#F7F7F7", fontSize: 16 }}>Popular</Text>
+                <Text style={{ color: "#F7F7F7", fontSize: 16 }}>{item}</Text>
               </View>
             ))}
           </View>

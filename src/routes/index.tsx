@@ -45,7 +45,7 @@ const Stacks = createStackNavigator(
     Product: {
       screen: Product,
       navigationOptions: {
-        header: props => <Header {...props} />
+        header: props => <Header {...props} title={"Product"} />
       }
     }
   },
@@ -75,7 +75,7 @@ const ProfileStack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "OrderDetails"
+    // initialRouteName: "OrderDetails"
   }
 );
 const AppTabs = createBottomTabNavigator(
@@ -138,7 +138,7 @@ const AppTabs = createBottomTabNavigator(
     }
   },
   {
-    initialRouteName: "Profile",
+    // initialRouteName: "Profile",
     tabBarComponent: Tabs,
     tabBarOptions: {
       activeTintColor: "#EF3651",
@@ -154,7 +154,7 @@ const AppRouter = createStackNavigator(
     OrderSuccess
   },
   {
-    // initialRouteName: "OrderSuccess",
+    // initialRouteName: "Stacks",
     defaultNavigationOptions: {
       header: null
     }

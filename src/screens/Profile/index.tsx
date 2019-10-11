@@ -44,9 +44,7 @@ export default function Profile(props) {
     }
   ];
   return (
-    <View
-      style={{ flex: 1, backgroundColor: "#1E1F28", marginBottom: "23.5%" }}
-    >
+    <View style={{ flex: 1, backgroundColor: "#1E1F28" }}>
       <View
         style={{
           paddingHorizontal: 17,
@@ -66,6 +64,7 @@ export default function Profile(props) {
       </View>
 
       <FlatList
+        style={{ marginBottom: "23.5%" }}
         data={options}
         keyExtractor={item => item.title}
         renderItem={({ item }) => (

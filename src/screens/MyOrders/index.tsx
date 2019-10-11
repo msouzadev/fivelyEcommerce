@@ -14,9 +14,7 @@ import { Ionicons } from "@expo/vector-icons";
 export default function MyOrders(props) {
   const orderStatus = ["Delivered", "Processing", "Cancelled"];
   return (
-    <View
-      style={{ flex: 1, backgroundColor: "#1E1F28", marginBottom: "23.5%" }}
-    >
+    <View style={{ flex: 1, backgroundColor: "#1E1F28" }}>
       <View
         style={{
           paddingHorizontal: 17,
@@ -49,7 +47,7 @@ export default function MyOrders(props) {
       </View>
 
       <FlatList
-        style={{ marginTop: 30 }}
+        style={{ marginTop: 30, marginBottom: "23.5%" }}
         data={[1, 2, 34, 4, 5, 6]}
         keyExtractor={item => String(item)}
         renderItem={({ item }) => (
