@@ -32,7 +32,7 @@ const Stack = createStackNavigator(
         }
       ),
       navigationOptions: {
-        header: props => <Header {...props} title={"Checkout"} />
+        header: props => <Header {...props} title={"Payment Methods"} />
       }
     },
     Product: {
@@ -43,7 +43,7 @@ const Stack = createStackNavigator(
     }
   },
   {
-    // initialRouteName: "Catalog"
+    initialRouteName: "Checkout"
   }
 );
 export default createAppContainer(Stack);

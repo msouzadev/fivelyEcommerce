@@ -125,7 +125,7 @@ export default function ChangePasswordModal(props) {
                 }}
               >
                 <View>
-                  <Text style={{ color: "#ABB4BD" }}>SAVE PASSWORD</Text>
+                  <Text style={{ color: "#f7f7f7" }}>SAVE PASSWORD</Text>
                 </View>
               </TouchableOpacity>
             </View>

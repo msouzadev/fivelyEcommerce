@@ -9,9 +9,11 @@ import {
 } from "react-native";
 import AddCardModal from "../../components/AddCardModal";
 // import { Container } from './styles';
-
+import { MaterialIcons } from "@expo/vector-icons";
 export default function PaymentMethods(props) {
   const [openModal, setOpenModal] = useState(false);
+  const cardVisa = require("../../../assets/img/card-visa.png");
+  const cardMaster = require("../../../assets/img/credit-card.png");
   return (
     <>
       <ScrollView style={{ backgroundColor: "#1E1F28" }}>
@@ -37,32 +39,53 @@ export default function PaymentMethods(props) {
                         marginTop: 30,
                         paddingVertical: 35
                       }}
-                      source={require("../../../assets/img/credit-card.png")}
+                      source={item % 2 == 0 ? cardVisa : cardMaster}
                     >
                       <View style={{ paddingHorizontal: 30, borderRadius: 25 }}>
-                        <Image
-                          source={require("../../../assets/img/chip.png")}
-                        ></Image>
+                        {item % 2 == 0 && (
+                          <View
+                            style={{
+                              marginTop: 20,
+                              flexDirection: "row",
+                              justifyContent: "flex-end"
+                            }}
+                          >
+                            <Image
+                              source={require("../../../assets/img/visa.png")}
+                            />
+                          </View>
+                        )}
                         <View
                           style={{
-                            marginTop: 30,
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            width: "100%"
+                            flexDirection: `column${
+                              item % 2 == 0 ? "-reverse" : ""
+                            }`
                           }}
                         >
-                          <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
-                            * * * *
-                          </Text>
-                          <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
-                            * * * *
-                          </Text>
-                          <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
-                            * * * *
-                          </Text>
-                          <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
-                            3947
-                          </Text>
+                          <Image
+                            source={require("../../../assets/img/chip.png")}
+                          ></Image>
+                          <View
+                            style={{
+                              marginTop: 30,
+                              flexDirection: "row",
+                              justifyContent: "space-between",
+                              width: "100%"
+                            }}
+                          >
+                            <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
+                              * * * *
+                            </Text>
+                            <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
+                              * * * *
+                            </Text>
+                            <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
+                              * * * *
+                            </Text>
+                            <Text style={{ color: "#f7f7f7", fontSize: 24 }}>
+                              3947
+                            </Text>
+                          </View>
                         </View>
                         <View
                           style={{
@@ -87,18 +110,32 @@ export default function PaymentMethods(props) {
                               05/23
                             </Text>
                           </View>
-                          <View style={{ paddingRight: 25 }}>
-                            <Image
-                              source={require("../../../assets/img/mastercard.png")}
-                            />
-                          </View>
+                          {item % 2 != 0 && (
+                            <View style={{ paddingRight: 25 }}>
+                              <Image
+                                source={require("../../../assets/img/mastercard.png")}
+                              />
+                            </View>
+                          )}
                         </View>
                       </View>
                     </ImageBackground>
                   </View>
                 </View>
-                <View style={{ paddingHorizontal: 16, marginTop: 25 }}>
-                  <Text style={{ color: "#f7f7f7" }}>
+                <View
+                  style={{
+                    paddingHorizontal: 16,
+                    marginTop: 25,
+                    flexDirection: "row",
+                    alignItems: "center"
+                  }}
+                >
+                  <MaterialIcons
+                    name="check-box-outline-blank"
+                    size={28}
+                    color="#ABB4BD"
+                  />
+                  <Text style={{ color: "#f7f7f7", marginLeft: 13 }}>
                     Use as default payment method
                   </Text>
                 </View>

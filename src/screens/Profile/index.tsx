@@ -20,27 +20,27 @@ export default function Profile(props) {
     {
       action: "MyOrders",
       title: "Shipping adresses",
-      description: "Already have 12 orders"
+      description: "3 addresses"
     },
     {
       action: "MyOrders",
       title: "Payment methods",
-      description: "Already have 12 orders"
+      description: "Visa **34"
     },
     {
       action: "MyOrders",
       title: "Promocodes",
-      description: "Already have 12 orders"
+      description: "You have special promocodes"
     },
     {
       action: "MyOrders",
       title: "My reviews",
-      description: "Already have 12 orders"
+      description: "Reviews for 4 items"
     },
     {
       action: "Settings",
       title: "Settings",
-      description: "Already have 12 orders"
+      description: "Notifications, password"
     }
   ];
   return (
