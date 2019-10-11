@@ -5,7 +5,8 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
-  ScrollView
+  ScrollView,
+  ImageBackground
 } from "react-native";
 import Modal from "../../components/Modal";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
@@ -46,84 +47,79 @@ export default function OrderDetails(props) {
             style={{ marginHorizontal: 16, marginTop: 20 }}
             data={[1, 2, 3]}
             renderItem={({ item }) => (
-              <View>
+              <View
+                style={{
+                  backgroundColor: "#2A2C36",
+                  flexDirection: "row",
+                  borderRadius: 15,
+                  marginBottom: 24
+                }}
+              >
                 <View
                   style={{
-                    marginBottom: 26,
-                    flexDirection: "row",
+                    width: 120,
                     borderTopLeftRadius: 15,
-                    borderBottomLeftRadius: 15
+                    borderBottomLeftRadius: 15,
+                    overflow: "hidden"
                   }}
                 >
                   <Image
                     style={{
-                      width: 104,
-                      height: 104,
-                      flex: 3,
                       borderTopLeftRadius: 15,
                       borderBottomLeftRadius: 15
                     }}
                     source={require("../../../assets/img/product-list.png")}
                   ></Image>
+                </View>
+
+                <View style={{ paddingVertical: 11 }}>
+                  <Text style={{ color: "#F6F6F6", fontSize: 16 }}>
+                    Pullover
+                  </Text>
+                  <Text
+                    style={{ color: "#ABB4BD", fontSize: 11, marginTop: 4 }}
+                  >
+                    Mango
+                  </Text>
+                  <View style={{ flexDirection: "row", marginTop: 10 }}>
+                    <Text style={{ color: "#9B9B9B", fontSize: 11 }}>
+                      Color:
+                      <Text style={{ color: "#f7f7f7", fontSize: 11 }}>
+                        Gray
+                      </Text>
+                    </Text>
+                    <Text
+                      style={{ color: "#9B9B9B", fontSize: 11, marginLeft: 16 }}
+                    >
+                      Size:
+                      <Text style={{ color: "#f7f7f7", fontSize: 11 }}>L</Text>
+                    </Text>
+                  </View>
                   <View
                     style={{
-                      backgroundColor: "#2A2C36",
-                      flex: 7,
-                      borderTopRightRadius: 15,
-                      borderBottomRightRadius: 15
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      width: "60%"
                     }}
                   >
-                    <View style={{ paddingLeft: 10, paddingTop: 11 }}>
-                      <View
-                        style={{
-                          flexDirection: "row",
-                          justifyContent: "space-between"
-                        }}
-                      >
-                        <Text style={{ color: "#F7F7F7", fontWeight: "bold" }}>
-                          Pullover
-                        </Text>
-                      </View>
-
-                      <Text style={{ color: "#ABB4BD", fontSize: 11 }}>
-                        Mango
-                      </Text>
-
-                      <Text
-                        style={{ color: "#ABB4BD", fontSize: 11, marginTop: 9 }}
-                      >
-                        Color:
+                    <View>
+                      <Text style={{ color: "#9B9B9B", fontSize: 11 }}>
+                        Units:
                         <Text
                           style={{
                             color: "#f7f7f7",
-                            fontSize: 11
+                            fontSize: 11,
+                            marginLeft: 5
                           }}
                         >
-                          Black
-                        </Text>
-                        Size:
-                        <Text
-                          style={{
-                            color: "#f7f7f7",
-                            fontSize: 11
-                          }}
-                        >
-                          L
+                          1
                         </Text>
                       </Text>
-                      <View
-                        style={{
-                          paddingRight: 15,
-                          marginTop: 13,
-                          flexDirection: "row",
-                          justifyContent: "space-between"
-                        }}
-                      >
-                        <Text style={{ color: "#9B9B9B", fontSize: 11 }}>
-                          Unitis:1
-                        </Text>
-                        <Text style={{ color: "#f7f7f7" }}>51%</Text>
-                      </View>
+                    </View>
+
+                    <View>
+                      <Text style={{ color: "#f7f7f7" }}>51$</Text>
                     </View>
                   </View>
                 </View>
@@ -132,7 +128,123 @@ export default function OrderDetails(props) {
           />
         </View>
         {/* order info */}
-        <View></View>
+        <View style={{ paddingHorizontal: 15 }}>
+          <Text style={{ color: "#f7f7f7", fontWeight: "bold" }}>
+            Order information
+          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 15
+            }}
+          >
+            <Text style={{ color: "#ABB4BD" }}>Shipping Adress:</Text>
+            <View>
+              <Text style={{ width: 215, color: "#f7f7f7" }}>
+                3 Newbridge Court ,Chino Hills, CA 91709, United States
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 15
+            }}
+          >
+            <Text style={{ color: "#ABB4BD" }}>Payment method:</Text>
+            <View
+              style={{
+                flexDirection: "row",
+                paddingRight: 11
+              }}
+            >
+              <View style={{ marginRight: 6 }}>
+                <Image
+                  style={{}}
+                  source={require("../../../assets/img/mastercard.png")}
+                ></Image>
+              </View>
+              <Text style={{ color: "#f7f7f7" }}>**** **** **** **** 3947</Text>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 15
+            }}
+          >
+            <Text style={{ color: "#ABB4BD" }}>Delivery method</Text>
+            <View>
+              <Text style={{ width: 215, color: "#f7f7f7" }}>
+                Fedex,3 days,15$
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 15
+            }}
+          >
+            <Text style={{ color: "#ABB4BD" }}>Discount</Text>
+            <View>
+              <Text style={{ width: 215, color: "#f7f7f7" }}>
+                10%, Personal promo code
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 15
+            }}
+          >
+            <Text style={{ color: "#ABB4BD" }}>Total Amount:</Text>
+            <View>
+              <Text style={{ width: 215, color: "#f7f7f7" }}>133$</Text>
+            </View>
+          </View>
+          <View
+            style={{
+              marginBottom: 34,
+              marginTop: 34,
+              flexDirection: "row",
+              paddingHorizontal: 15,
+              justifyContent: "space-between"
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                alignItems: "center",
+                width: "40%",
+                borderRadius: 30,
+                paddingVertical: 8,
+                borderColor: "#f7f7f7",
+                borderWidth: 1
+              }}
+            >
+              <Text style={{ color: "#f7f7f7" }}>Reorder</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                alignItems: "center",
+                width: "40%",
+                borderRadius: 30,
+                paddingVertical: 8,
+                borderColor: "#f7f7f7",
+                borderWidth: 1,
+                backgroundColor: "#EF3651"
+              }}
+            >
+              <Text style={{ color: "#f7f7f7" }}>Leave feedback</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
