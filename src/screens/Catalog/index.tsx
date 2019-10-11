@@ -84,7 +84,11 @@ export default function Catalog(props) {
       </Modal>
       <FilterModal open={filterModal} onClose={() => setFilterModal(false)} />
       <FlatList
-        style={{ marginLeft: 14, marginVertical: 12, height: 60 }}
+        style={{
+          marginLeft: 14,
+          marginVertical: 12,
+          height: 60
+        }}
         horizontal
         keyExtractor={item => String(item)}
         data={[1, 2, 3, 4, 6]}
@@ -151,7 +155,7 @@ export default function Catalog(props) {
 
       <FlatList
         keyExtractor={item => String(item)}
-        style={{ marginHorizontal: 16, marginTop: 20, marginBottom: "21.3%" }}
+        style={{ marginHorizontal: 16, marginTop: 20, marginBottom: "30.3%" }}
         data={[1, 2, 3, 4, 5, 6]}
         renderItem={({ item }) => (
           <View>
