@@ -23,7 +23,10 @@ export default function CatalogHeader(props) {
             alignItems: "center"
           }}
         >
-          <TouchableOpacity onPress={() => props.navigation.pop()}>
+          <TouchableOpacity
+            // style={{ padding: 5 }}
+            onPress={() => props.navigation.goBack()}
+          >
             <Ionicons name="ios-arrow-back" color="#F7F7F7" size={30} />
           </TouchableOpacity>
           {props.showRigthIcon && (

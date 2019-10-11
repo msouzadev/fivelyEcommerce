@@ -38,7 +38,7 @@ export default function Profile(props) {
       description: "Already have 12 orders"
     },
     {
-      action: "MyOrders",
+      action: "Settings",
       title: "Settings",
       description: "Already have 12 orders"
     }

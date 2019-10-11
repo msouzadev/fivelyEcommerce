@@ -7,7 +7,8 @@ import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 import Header from "../components/Header";
 import CatalogHeader from "../components/CatalogHeader";
 import Catalog from "../screens/Catalog";
-
+import Checkout from "../screens/Checkout";
+import Product from "../screens/Product";
 const TopTab = createMaterialTopTabNavigator(
   {
     Women,
@@ -48,6 +49,19 @@ const Stack = createStackNavigator(
       screen: Catalog,
       navigationOptions: {
         header: props => <CatalogHeader {...props} />
+      }
+    },
+
+    Product: {
+      screen: Product,
+      navigationOptions: {
+        header: props => <Header {...props} title={"Product"} />
+      }
+    },
+    Checkout: {
+      screen: Checkout,
+      navigationOptions: {
+        header: props => <Header {...props} title={"Checkout"} />
       }
     }
   },

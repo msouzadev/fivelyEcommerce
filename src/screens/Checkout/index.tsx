@@ -1,13 +1,20 @@
 import React from "react";
 import { View, ScrollView, Text, Image, TouchableOpacity } from "react-native";
-
+import { StackActions, NavigationActions } from "react-navigation";
 // import { Container } from './styles';
 
 export default function Checkout(props) {
+  const resetAction = StackActions.reset({
+    index: 0, // <-- currect active route from actions array
+    actions: [NavigationActions.navigate({ routeName: "OrderSuccess" })]
+  });
+
   const creditCardBrand = require("../../../assets/img/card.png");
   return (
     <ScrollView style={{ backgroundColor: "#1E1F28" }}>
-      <View style={{ paddingHorizontal: 16, marginTop: 40, marginBottom: 30 }}>
+      <View
+        style={{ paddingHorizontal: 16, marginTop: 40, marginBottom: "35%" }}
+      >
         <View>
           <Text style={{ color: "#F7F7F7", fontSize: 16 }}>
             Shipping address
@@ -96,9 +103,6 @@ export default function Checkout(props) {
                 Delivery method
               </Text>
             </View>
-            <View style={{}}>
-              <Text style={{ color: "#EF3651" }}>Change</Text>
-            </View>
           </View>
           <View
             style={
@@ -148,7 +152,7 @@ export default function Checkout(props) {
         </View>
         <View style={{ paddingHorizontal: 16, marginTop: 23 }}>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate("OrderSuccess")}
+            onPress={() => props.navigation.dispatch(resetAction)}
             style={{
               justifyContent: "center",
               alignItems: "center",

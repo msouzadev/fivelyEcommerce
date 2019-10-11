@@ -6,6 +6,7 @@ import Tabs from "../components/Tabs";
 import Header from "../components/Header";
 import Shop from "./shop";
 import Bag from "../screens/Bag";
+import BagRoutes from "./bag";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import PaymentMethods from "../screens/PaymentMethods";
@@ -18,11 +19,11 @@ import {
 } from "@expo/vector-icons";
 import { createStackNavigator } from "react-navigation-stack";
 
-import Product from "../screens/Product";
 import Checkout from "../screens/Checkout";
 import CatalogHeader from "../components/CatalogHeader";
 import { View, Text } from "react-native";
 import OrderDetails from "../screens/OrderDetails";
+import Settings from "../screens/Settings";
 const OrderSuccess = createSwitchNavigator({
   SuccessOrder
 });
@@ -39,13 +40,6 @@ const Stacks = createStackNavigator(
       screen: PaymentMethods,
       navigationOptions: {
         header: props => <Header {...props} title={"Payment methods"} />
-      }
-    },
-
-    Product: {
-      screen: Product,
-      navigationOptions: {
-        header: props => <Header {...props} title={"Product"} />
       }
     }
   },
@@ -72,10 +66,16 @@ const ProfileStack = createStackNavigator(
       navigationOptions: {
         header: props => <Header {...props} title="Order Details" />
       }
+    },
+    Settings: {
+      screen: Settings,
+      navigationOptions: {
+        header: props => <CatalogHeader {...props} title="Settings" />
+      }
     }
   },
   {
-    // initialRouteName: "OrderDetails"
+    // initialRouteName: "Settings"
   }
 );
 const AppTabs = createBottomTabNavigator(
@@ -105,7 +105,7 @@ const AppTabs = createBottomTabNavigator(
       }
     },
     Bag: {
-      screen: Bag,
+      screen: BagRoutes,
       navigationOptions: {
         tabBarIcon: ({ tintColor, focused }) => (
           <Feather name={`shopping-bag`} size={40} color={tintColor} />
@@ -150,11 +150,10 @@ const AppTabs = createBottomTabNavigator(
 const AppRouter = createStackNavigator(
   {
     AppTabs,
-    Stacks,
     OrderSuccess
   },
   {
-    // initialRouteName: "Stacks",
+    // initialRouteName: "AppTabs",
     defaultNavigationOptions: {
       header: null
     }

@@ -12,7 +12,7 @@ export default function SuccessOrder(props) {
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
-            paddingTop: 190
+            paddingTop: "20%"
           }}
         >
           <Image

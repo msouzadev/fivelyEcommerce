@@ -221,7 +221,7 @@ export default function OrderDetails(props) {
             <TouchableOpacity
               style={{
                 alignItems: "center",
-                width: "40%",
+                width: "45%",
                 borderRadius: 30,
                 paddingVertical: 8,
                 borderColor: "#f7f7f7",
@@ -233,8 +233,8 @@ export default function OrderDetails(props) {
             <TouchableOpacity
               style={{
                 alignItems: "center",
-                width: "40%",
                 borderRadius: 30,
+                width: "45%",
                 paddingVertical: 8,
                 borderColor: "#f7f7f7",
                 borderWidth: 1,
