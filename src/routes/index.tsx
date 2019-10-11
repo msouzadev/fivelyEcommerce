@@ -72,6 +72,12 @@ const ProfileStack = createStackNavigator(
       navigationOptions: {
         header: props => <CatalogHeader {...props} title="Settings" />
       }
+    },
+    PaymentMethods: {
+      screen: PaymentMethods,
+      navigationOptions: {
+        header: props => <Header {...props} title={"Payment methods"} />
+      }
     }
   },
   {
@@ -145,7 +151,7 @@ const AppTabs = createBottomTabNavigator(
     }
   },
   {
-    initialRouteName: "Profile",
+    // initialRouteName: "Profile",
     tabBarComponent: Tabs,
     tabBarOptions: {
       activeTintColor: "#EF3651",

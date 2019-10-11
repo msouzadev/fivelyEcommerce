@@ -8,7 +8,20 @@ export default function Checkout(props) {
     index: 0, // <-- currect active route from actions array
     actions: [NavigationActions.navigate({ routeName: "OrderSuccess" })]
   });
-
+  const shippinMethods = [
+    {
+      name: "fedex",
+      img: require("../../../assets/img/fedex.png")
+    },
+    {
+      name: "usps",
+      img: require("../../../assets/img/usps.png")
+    },
+    {
+      name: "dhl",
+      img: require("../../../assets/img/dhl.png")
+    }
+  ];
   const creditCardBrand = require("../../../assets/img/card.png");
   return (
     <ScrollView style={{ backgroundColor: "#1E1F28" }}>
@@ -112,11 +125,8 @@ export default function Checkout(props) {
             }
           >
             <ScrollView horizontal>
-              {[1, 2, 3, 4, 6].map(item => (
-                <Image
-                  key={item}
-                  source={require("../../../assets/img/fedex.png")}
-                />
+              {shippinMethods.map(item => (
+                <Image key={item.name} source={item.img} />
               ))}
             </ScrollView>
           </View>

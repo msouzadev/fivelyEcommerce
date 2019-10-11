@@ -5,7 +5,7 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 export default function CatalogHeader(props) {
   useEffect(() => {
-    console.log(props);
+    console.log(props.navigation.state.index);
   }, []);
   return (
     <View

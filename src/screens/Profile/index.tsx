@@ -23,7 +23,7 @@ export default function Profile(props) {
       description: "3 addresses"
     },
     {
-      action: "MyOrders",
+      action: "PaymentMethods",
       title: "Payment methods",
       description: "Visa **34"
     },

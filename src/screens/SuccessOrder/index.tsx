@@ -3,7 +3,12 @@ import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
 
 // import { Container } from './styles';
 
+import { StackActions, NavigationActions } from "react-navigation";
 export default function SuccessOrder(props) {
+  const resetAction = StackActions.reset({
+    index: 0, // <-- currect active route from actions array
+    actions: [NavigationActions.navigate({ routeName: "AppTabs" })]
+  });
   return (
     <>
       <ScrollView style={{ flex: 1, backgroundColor: "#1E1F28" }}>
@@ -57,7 +62,7 @@ export default function SuccessOrder(props) {
         }}
       >
         <TouchableOpacity
-          onPress={() => props.navigation.navigate("Catalog")}
+          onPress={() => props.navigation.dispatch(resetAction)}
           style={{
             paddingVertical: 14,
             backgroundColor: "#EF3651",
