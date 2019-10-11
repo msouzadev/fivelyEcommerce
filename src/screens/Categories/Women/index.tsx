@@ -5,6 +5,24 @@ import { ScrollView } from "react-native-gesture-handler";
 // import { Container } from './styles';
 
 export default function Women(props) {
+  const categories = [
+    {
+      name: "New",
+      img: require("../../../../assets/img/category1.png")
+    },
+    {
+      name: "Clothes",
+      img: require("../../../../assets/img/category2.png")
+    },
+    {
+      name: "Shoes",
+      img: require("../../../../assets/img/category3.png")
+    },
+    {
+      name: "Accesories",
+      img: require("../../../../assets/img/category4.png")
+    }
+  ];
   return (
     <ScrollView
       style={{
@@ -30,13 +48,13 @@ export default function Women(props) {
           </Text>
         </View>
       </View>
-      <View style={{ marginBottom: "21.3%" }}>
-        {[1, 2, 3, 4, 5, 6].map(item => (
+      <View style={{ marginBottom: "30.3%" }}>
+        {categories.map(item => (
           <TouchableOpacity
             onPress={() => {
               props.navigation.navigate("Catalog");
             }}
-            key={item}
+            key={item.name}
             style={{ flexDirection: "row", margin: 16, borderRadius: 15 }}
           >
             <View
@@ -52,7 +70,7 @@ export default function Women(props) {
               <Text
                 style={{ fontWeight: "bold", fontSize: 18, color: "#F7F7F7" }}
               >
-                New
+                {item.name}
               </Text>
             </View>
             <Image
@@ -61,7 +79,7 @@ export default function Women(props) {
                 borderTopRightRadius: 15,
                 borderBottomRightRadius: 15
               }}
-              source={require("../../../../assets/img/category.png")}
+              source={item.img}
             ></Image>
           </TouchableOpacity>
         ))}

@@ -27,7 +27,6 @@ export default function FilterModal(props) {
           <View
             style={{
               marginLeft: 12,
-              marginTop: 20,
               flexDirection: "row",
               alignItems: "center",
               paddingHorizontal: 8,
@@ -40,9 +39,7 @@ export default function FilterModal(props) {
                 height: 2
               },
               shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-
-              elevation: 5
+              shadowRadius: 3.84
             }}
           >
             <TouchableOpacity onPress={() => props.onClose()}>
@@ -267,9 +264,7 @@ export default function FilterModal(props) {
           </ScrollView>
           <View
             style={{
-              elevation: 3,
               borderColor: "#1E1F28",
-              borderTopWidth: 1,
               paddingHorizontal: 16,
               paddingBottom: 48,
               paddingTop: 20,

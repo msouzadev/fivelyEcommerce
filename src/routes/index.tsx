@@ -113,7 +113,14 @@ const AppTabs = createBottomTabNavigator(
       }
     },
     Favorites: {
-      screen: Favorites,
+      screen: createStackNavigator({
+        Favorites: {
+          screen: Favorites,
+          navigationOptions: {
+            header: props => <CatalogHeader {...props} title="Favorites" />
+          }
+        }
+      }),
       navigationOptions: {
         tabBarIcon: ({ tintColor, focused }) => (
           <MaterialCommunityIcons
