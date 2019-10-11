@@ -43,7 +43,7 @@ const Stack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "Checkout"
+    // initialRouteName: "Checkout"
   }
 );
 export default createAppContainer(Stack);

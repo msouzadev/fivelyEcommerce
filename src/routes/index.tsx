@@ -145,7 +145,7 @@ const AppTabs = createBottomTabNavigator(
     }
   },
   {
-    // initialRouteName: "Profile",
+    initialRouteName: "Profile",
     tabBarComponent: Tabs,
     tabBarOptions: {
       activeTintColor: "#EF3651",

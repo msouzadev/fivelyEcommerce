@@ -12,7 +12,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 export default function Product(props) {
   const [openSelect, setOpen] = useState(false);
   return (
-    <ScrollView style={{ backgroundColor: "#1E1F28", marginBottom: "25%" }}>
+    <ScrollView style={{ backgroundColor: "#1E1F28", flex: 1 }}>
       <View style={{}}>
         <Image
           source={require("../../../assets/img/product.png")}
@@ -227,6 +227,7 @@ export default function Product(props) {
         )}
         <View
           style={{
+            marginBottom: "25%",
             backgroundColor: "#1E1F28",
             justifyContent: "center",
             alignItems: "center",

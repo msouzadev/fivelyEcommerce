@@ -5,13 +5,9 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
-  ScrollView,
-  ImageBackground
+  ScrollView
 } from "react-native";
-import Modal from "../../components/Modal";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 export default function OrderDetails(props) {
-  const [promoCodeModal, setPromoCodeModal] = useState(false);
   return (
     <View style={{ backgroundColor: "#1E1F28", flex: 1 }}>
       <ScrollView style={{ marginBottom: "27%" }}>
@@ -57,7 +53,7 @@ export default function OrderDetails(props) {
               >
                 <View
                   style={{
-                    width: 120,
+                    // height: 105,
                     borderTopLeftRadius: 15,
                     borderBottomLeftRadius: 15,
                     overflow: "hidden"
@@ -65,6 +61,7 @@ export default function OrderDetails(props) {
                 >
                   <Image
                     style={{
+                      height: 119,
                       borderTopLeftRadius: 15,
                       borderBottomLeftRadius: 15
                     }}
@@ -72,7 +69,7 @@ export default function OrderDetails(props) {
                   ></Image>
                 </View>
 
-                <View style={{ paddingVertical: 11 }}>
+                <View style={{ paddingVertical: 11, paddingHorizontal: 14 }}>
                   <Text style={{ color: "#F6F6F6", fontSize: 16 }}>
                     Pullover
                   </Text>
